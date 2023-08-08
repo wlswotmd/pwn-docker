@@ -34,6 +34,7 @@ A docker environment for pwnable challenges
     ```bash
     # example
     ~/prob_dir> sudo gdb chal -q
+    gef> at
     gef> vmmap
     [ Legend:  Code | Heap | Stack | Writable | ReadOnly | None | RWX ]
     Start              End                Size               Offset             Perm Path
