@@ -1,4 +1,4 @@
-FROM ubuntu:22.04
+FROM ubuntu:18.04
 WORKDIR /root
 ENV LC_CTYPE C.UTF-8
 ARG DEBIAN_FRONTEND=noninteractive
