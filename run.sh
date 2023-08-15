@@ -12,14 +12,17 @@ print_usage () {
     echo "    -c    challenge name (default: prob)"
 }
 
-set -- $(getopt hv:l:d:p:n:s:c: "$@")
+set -e
+
+options=$(getopt hv:l:d:p:n:s:c: "$@")
+set -- $options
 
 # default options
 libc=""
 ld=""
 port="12345"
 version="22.04"
-name=`dd bs=18 count=1 if=/dev/urandom 2>/dev/null | base64 | tr +/ __`
+name=`dd bs=18 count=1 if=/dev/urandom 2>/dev/null | base64 | tr +/_ XXX`
 shared_dir=$PWD
 chal="prob"
 
@@ -53,6 +56,6 @@ do
     shift
 done
 
-sudo docker run -d --rm -v "$shared_dir":/root/pwn \
+sudo docker run -d --rm --privileged --pid=host -v "$shared_dir":/root/pwn \
     -e "CUSTOM_LIBC=$libc" -e "CUSTOM_LD=$ld" -e "CHALLENGE=$chal" \
-    -p $port:1337 --name $name $version /root/start_chal.sh
+    -p $port:12345 --name $name $version /root/start_chal.sh

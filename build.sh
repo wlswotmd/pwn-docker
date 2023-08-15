@@ -28,4 +28,4 @@ do
     shift
 done
 
-sudo docker build -t $version:latest ./$version
+sudo docker build --no-cache -t $version:latest -f ./Dockerfiles/$version/Dockerfile .

@@ -2,7 +2,7 @@
 A docker environment for pwnable challenges
 
 ## TODO
-- [ ] fix to run "challenge" using given ld file
+- [x] fix to run "challenge" using given ld file
 - [ ] add dependency option
 
 ## Usage
