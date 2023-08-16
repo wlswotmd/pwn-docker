@@ -26,12 +26,12 @@ A docker environment for pwnable challenges
     ~/prob_dir> ~/pwn-docker/run.sh -v 20.04 -l libc-2.31.so -d ld-linux-x86-64.so.2 -c chal
     ```
 
-4. connect to prob via nc, pwntools, etc.
+4. connect to prob using nc, pwntools, etc.
     ```bash
     ~/prob_dir> nc localhost 12345 
     ```
 
-5. attach to prob via gdb
+5. attach to prob using gdb
     ```bash
     # example
     ~/prob_dir> sudo gdb chal -q
